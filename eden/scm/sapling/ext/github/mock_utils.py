@@ -295,7 +295,8 @@ class MockGitHubServer:
             pr_list = [
                 f"* __->__ #{n}" if n == pr_number else f"* #{n}" for n in stack_pr_ids
             ]
-            body += (
+            body = (
+                body.rstrip() +
                 "\n---\n"
                 "[//]: # (BEGIN SAPLING FOOTER)\n"
                 "Stack created with [Sapling](https://sapling-scm.com). Best reviewed"
